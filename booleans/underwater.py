@@ -7,10 +7,11 @@ y = pos.y
 z = pos.z
 
 blockType = mc.getBlock(x, y, z)
-mc.postToChat(blockType == 2)
+blockType2 = mc.getBlock(x, y+1, z)
+mc.postToChat(blockType == 9)
 
-underwater = blockType == y - 1
-drowning = blockType == y - 2
+underwater = blockType == 9
+drowning = blockType2 == 9
 
 mc.postToChat("The player is drowning: " + str(drowning))
 mc.postToChat("The player is standing in water: " + str(underwater))
