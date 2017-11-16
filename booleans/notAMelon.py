@@ -1,11 +1,13 @@
 from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
 
-x = 10
-y = 11
-z = 12
-melon = 103
-block = mc.getBlock(x, y, z)
+x = 37.9
+y = 7.0
+z = 0.6
 
-noMelon = not 103
+blockType = mc.getBlock(x, y, z)
+
+melon = blockType == 103
+noMelon = not melon
+
 mc.postToChat("You need to get some food: " + str(noMelon))
