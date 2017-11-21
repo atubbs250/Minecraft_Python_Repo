@@ -1,7 +1,7 @@
 from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
 
-Yes = "Y"
+Yes = "Y" 
 attempt = input("Do you want blocks to be immutable? Y/N: ")
 if attempt == Yes:
     print("immutable")
