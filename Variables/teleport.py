@@ -1,7 +1,7 @@
 from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
-x = 62.5
+x = -111.9
 y = 100
-z = -36.3
+z = -24.2
 mc.player.setTilePos(x, y, z)
 
