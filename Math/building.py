@@ -1,4 +1,16 @@
-Python 3.4.2 (default, Oct 19 2014, 13:31:11) 
-[GCC 4.9.1] on linux
-Type "copyright", "credits" or "license()" for more information.
->>> 
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
+pos = mc.player.getPos()
+
+x = pos.x
+y = pos.y
+z = pos.z
+
+width = 11
+height = 6
+length = 7
+
+cobblestone = 1
+air = 0
+
+mc.setBlocks(x, y, z, x+length, y+height, z+width, cobblestone)
