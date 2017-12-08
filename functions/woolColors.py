@@ -19,6 +19,9 @@ def getWoolState(color):
         blockState = 14
     elif color == "white":
         blockState = 35
+
+    return blockState
+
 colorString = input("Enter a block color: ")
 state = getWoolState(colorString)
 
