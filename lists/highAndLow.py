@@ -3,18 +3,21 @@ mc = Minecraft.create()
 
 import time
 
-heights = [100, 0]
+height = [100, 0]
 count = 0
 
 while count < 60:
     pos = mc.player.getTilePos()
 
-    if pos.y < heights[0]:
-
-    elif pos.y > heights[1]:
+    if pos.y < height[0]:
+        height[0] = pos.y
+    elif pos.y > height[1]:
+        height[1] = pos.y
 
     count += 1
     time.sleep(1)
 
-mc.postToChat("Lowest: ")
-mc.postToChat("Highest: ")
+mc.postToChat("Lowest: " + str(height[0]))
+              
+mc.postToChat("Highest: " + str(height[1]))
+              
