@@ -5,8 +5,7 @@ import random
 import time
 
 pos = mc.player.getTilePos()
-# x, y, z = -26.0, 13.0, 169.8
-x, y, z = (x.pos), (y.pos), (z.pos)
+x, y, z = (pos.x), (pos.y), (pos.z)
 
 while True:
     x += random.uniform(-0.2, 0.2)
