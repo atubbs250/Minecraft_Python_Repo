@@ -1,9 +1,9 @@
 from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
 
-places = {"Home": ( -37.9, 25.0, -2.5)
-          "Tree": (7.3, 31.0, 33.4)
-          "Hole": (2.3, -59.0, 13.6)}
+places = {"Home": ( 9.8, 5.0, -26.5),
+          "Tree": (74.7, 15.0, -61.7),
+          "Hole": (70.3, -61.0, -46.7)}
 
 choice = ""
 while choice != "exit":
