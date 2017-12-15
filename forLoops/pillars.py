@@ -17,9 +17,17 @@ def setPillar(x, y, z, height):
     mc.setBlock(x, y + 1, z + 1, stairBlock, 3)
     mc.setBlock(x, y + 1, z - 1, stairBlock, 2)
 
-    mc.setBlock(x, y, z, x, y + height, z, block, 2)
+    mc.setBlocks(x, y, z, x, y + height, z, 56, 2)
 
 pos = mc.player.getTilePos()
 x, y, z = pos.x + 2, pos.y, pos.z
+
+for number in range(0, 20):
+    setPillar(x, y, z, 5)
+    print("pillar")
+    x += 5
+    
+    
+
 
 
