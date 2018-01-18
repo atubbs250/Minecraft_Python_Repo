@@ -8,6 +8,9 @@ twoDimensionalRainbowList = [[0, 0, 0],
                              [4, 4, 4],
                              [5, 5, 5]]
 
+twoDimensionalRainbowList[0][1] = 7
+print(twoDimensionalRainbowList[5][0])
+
 pos = mc.player.getTilePos()
 x = pos.x
 y = pos.y
