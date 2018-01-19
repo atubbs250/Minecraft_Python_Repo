@@ -16,16 +16,16 @@ def copyStructure(x1, y1, z1, x2, y2, z2):
     height = y2 - y1
     length = z2 - z1
 
-    stucture = []
+    structure = []
 
     print("Please wait...")
 
-    for column in range(height):
+    for row in range(height):
         structure.append([])
-        for row in range(width):
-            structure[column].append([])
+        for column in range(width):
+            structure[row].append([])
             for depth in range(length):
-                block = mc.getBlock(x1 + row, y1 + column, z1 + depth)
+                block = mc.getBlock(x1 + column, y1 + row, z1 + depth)
                 structure[row][column].append(block)
 
     return structure
@@ -33,9 +33,9 @@ def copyStructure(x1, y1, z1, x2, y2, z2):
 def buildStructure(x, y, z, structure):
     xStart = x
     yStart = y
-    for column in structure:
-        for row in column:
-            for block in row:
+    for row in structure:
+        for column in row:
+            for block in column:
                 mc.setBlock(x, y, z, block)
                 z += 1
             x += 1
