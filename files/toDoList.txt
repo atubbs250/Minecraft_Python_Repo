@@ -1,3 +1,5 @@
 make bed
-read
-study
+brush teeth
+get dressed
+eat breakfast
+leave to go to school
