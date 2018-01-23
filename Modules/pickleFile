@@ -1,9 +1,0 @@
-import pickle as p
-
-locations = {'John': 'Forest', 'Phillipa': 'Mountains', 'Pete': 'City'}
-
-secretFile = open("secretFile", "wb")
-p.dump(locations, secretFile)
-
-locations = load(secretFile)
-print(locations['Phillipa'])
