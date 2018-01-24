@@ -16,4 +16,13 @@ def buildStructure(x, y, z, structure):
         y += 1
         x = xStart
 
-    structure =
+    pickleFile = open("pickleFile", "rb")
+
+    structure = pickle.load(pickleFile)
+    
+
+    pos = mc.player.getTilePos()
+    x = pos.x
+    y = pos.y
+    z = pos.z
+    buildStructure(x, y, z, structure)
