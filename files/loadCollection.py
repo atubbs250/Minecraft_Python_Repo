@@ -1,7 +1,7 @@
 from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
 
-import pickle
+import shelve 
 
 def buildStructure(x, y, z, structure):
     xStart = x
@@ -16,13 +16,13 @@ def buildStructure(x, y, z, structure):
         y += 1
         x = xStart
 
-pickleFile = open("pickleFile", "rb")
+structureDictionary = shelve.open("shelveFile.db")
 
-structure = pickle.load(pickleFile)
-    
+structureName = input("Enter the structure's name")
 
 pos = mc.player.getTilePos()
 x = pos.x
 y = pos.y
 z = pos.z
-buildStructure(x, y, z, structure)
+
+buildStructure(x, y, z, structureDictionary[structureName])
