@@ -15,7 +15,8 @@ class Cat(object):
         print(self.name + " is now sleeping...")
 
 fluff = Cat("Fluff", 4.5)
-print(fluff.weight)
+stella = Cat("Stella", 3.9)
+print(fluff.name)
+print(stella.name)
 fluff.eat("tuna")
-fluff.eatAndSleep("tuna")
-print(fluff.getWeightInGrams())
+stella.eat("cake")
