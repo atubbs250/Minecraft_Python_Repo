@@ -38,15 +38,40 @@ class Building(object):
         mc.setBlocks(self.x + (self.width / 2), self.y + 1, self.z,
                      self.x + (self.width / 2), self.y + 2, self.z, 0)
 
+        
+class FancyBuilding(Building): 
+    def upgrade(self):
+        mc.setBlocks(self.x + 1, self.y, self.z + 1,
+                     self.x + self.width - 1, self.y, self.z + self.depth - 1,
+                     35, 6)
+        
+        mc.setBlocks(self.x - 1, self.y, self.z - 1,
+                     self.x - 1, self.y, self.z + self.depth + 1,
+                     37)
+        mc.setBlocks(self.x - 1, self.y, self.z - 1,
+                     self.x + self.width + 1, self.y, self.z - 1,
+                     37)
+        mc.setBlocks(self.x + self.width + 1, self.y, self.z - 1,
+                     self.x + self.width + 1, self.y, self.z + self.depth + 1,
+                     37)
+        mc.setBlocks(self.x - 1, self.y, self.z + self.depth + 1,
+                     self.x + self.width + 1, self.y, self.z + self.depth + 1,
+                     37)
+
 pos = mc.player.getTilePos()
 x = pos.x
 y = pos.y
 z = pos.z
 
 ghostHouse = Building(x, y, z, 10, 6, 8)
-ghostHouse.build()
+ghostHouse.buildWindows()
+ghostHouse.buildDoor()
+ghostHotel = FancyBuilding(x, y, z, 10, 6, 8)
+ghostHotel.build()
+ghostHotel.upgrade()
+
 
 time.sleep(30)
 
+ghostHotel.clear()
 ghostHouse.clear()
-ghostHouse.x = 8 
