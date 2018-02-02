@@ -33,8 +33,8 @@ class NameBuilding(object):
         return self.name + " is at " + str(self.x) + ", " + str(self.y) + ", " + str(self.z)
     
     def buildWindows(self):
-        mc.setBlock(self.x + (self.width / 4 * 3), self.y + 2, self.z, 0)
-        mc.setBlock(self.x + (self.width / 4), self.y + 2, self.z, 0)
+        mc.setBlocks(self.x + (self.width / 4 * 3), self.y + 2, self.z, 0)
+        mc.setBlocks(self.x + (self.width / 4), self.y + 2, self.z, 0)
 
     def buildDoor(self):
         mc.setBlocks(self.x + (self.width / 2), self.y + 1, self.z,

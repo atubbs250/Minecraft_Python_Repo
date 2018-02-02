@@ -14,7 +14,7 @@ class Building(object):
         self.depth = depth
 
     def build(self):
-        mc.setBlock(self.x, self.y, self.z,
+        mc.setBlocks(self.x, self.y, self.z,
                     self.x + self.width, self.y + self.height,
                     self.z + self.depth, 4)
 
@@ -31,8 +31,8 @@ class Building(object):
                      self.z + self.depth, 0)
         
     def buildWindows(self):
-        mc.setBlock(self.x + (self.width / 4 * 3), self.y + 2, self.z, 0)
-        mc.setBlock(self.x + (self.width / 4), self.y + 2, self.z, 0)
+        mc.setBlocks(self.x + (self.width / 4 * 3), self.y + 2, self.z, 0)
+        mc.setBlocks(self.x + (self.width / 4), self.y + 2, self.z, 0)
 
     def buildDoor(self):
         mc.setBlocks(self.x + (self.width / 2), self.y + 1, self.z,
