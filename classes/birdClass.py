@@ -12,6 +12,18 @@ class Bird(object):
 class Penguin(Bird):
     def swim(self):
         print("swimming")
+
+    def birdcall(self):
+        print("chirp")
+
+    def fly(self):
+        print("flap")
+
+class Parrot(Bird):
+    def __init__(self, name, wingspan, color):
+        self.name = name
+        self.wingspan = wingspan
+        self.color = color
         
 
 gardenBird = Bird("Geoffrey", 12)
@@ -23,4 +35,8 @@ sarahThePenguin.swim()
 sarahThePenguin.fly()
 sarahThePenguin.birdcall()
 
+freddieTheParrot = Parrot("Freddie", 12, "blue")
+print(freddieTheParrot.color)
+freddieTheParrot.fly(0)
+freddieTheParrot.birdcall()
 
