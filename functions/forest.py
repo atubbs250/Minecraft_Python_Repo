@@ -1,9 +1,10 @@
 from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
 
-x = 0.5
-y = 7.0
-z = 0.5
+pos = mc.player.getTilePos()
+x = pos.x
+y = pos.y
+z = pos.z
 count = 1
 
 def growTree():
