@@ -49,23 +49,19 @@ class Tree(Building):
         wood = 17
         leaves = 18
 
-        mc.setBlocks(self.x, self.y, self.z, self.x, self.y + 5, self.z, wood)
+        mc.setBlocks(x, y, z, x, y + 5, z, wood)
         
-        mc.setBlocks(self.x - 2, self.y + 6, self.z - 2,
-                     self.x + 2, self.y + 6, self.z + 2, leaves)
-        mc.setBlocks(self.x - 1, self.y + 7, self.z - 1,
-                     self.x + 1, self.y + 7, self.z + 1, leaves)
+        mc.setBlocks(x - 2, y + 6, z - 2, x + 2, y + 6, z + 2, leaves)
+        mc.setBlocks(x - 1, y + 7, z - 1, x + 1, y + 7, z + 1, leaves)
 
     def clear(self):
         wood = 0
         leaves = 0
 
-        mc.setBlocks(self.x, self.y, self.z, self.x, self.y + 5, self.z, wood)
+        mc.setBlocks(x, y, z, x, y + 5, z, wood)
         
-        mc.setBlocks(self.x - 2, self.y + 6, self.z - 2,
-                     self.x + 2, self.y + 6, self.z + 2, leaves)
-        mc.setBlocks(self.x - 1, self.y + 7, self.z - 1,
-                     self.x + 1, self.y + 7, self.z + 1, leaves)
+        mc.setBlocks(x - 2, y + 6, z - 2, x + 2, y + 6, z + 2, leaves)
+        mc.setBlocks(x - 1, y + 7, z - 1, x + 1, y + 7, z + 1, leaves)
 
 pos = mc.player.getTilePos()
 x = pos.x
