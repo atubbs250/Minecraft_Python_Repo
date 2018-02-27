@@ -38,10 +38,8 @@ def progressBar():
 
         del blocks[9]
         blocks.insert(0, barBlock)
-        mc.postToChat("Hurry up, you are losing time!")
 
         time.sleep(10)
-
 
 def treasureBlock():
     from mcpi.minecraft import Minecraft
@@ -50,7 +48,11 @@ def treasureBlock():
     import random
     import threading
     from threading import Thread
+    import sys
     mc = Minecraft.create()
+
+    pos = mc.player.getTilePos()
+    x, y, z = pos.x, pos.y, pos.z
     
     destX = random.randint(-127, 127)
     destZ = random.randint(-127, 127)
@@ -64,22 +66,27 @@ def treasureBlock():
         pos = mc.player.getPos()
         distance = math.sqrt((pos.x - destX) ** 2 + (pos.z - destZ) ** 2)
 
+    
         if distance > 100:
-            mc.postToChat("On Fire!")
+            mc.postToChat("On Fire! You are losing time! Think outside the box!")
         elif distance > 50:
-            mc.postToChat("Boiling")
+            mc.postToChat("Boiling! You are losing time! Think outside the box!")
         elif distance > 25:
             mc.postToChat("Warm")
         elif distance > 12:
             mc.postToChat("cold")
         elif distance > 6:
-            mc.postToChat("Freezing")
-        elif distance > 2:
+            mc.postToChat("Freezing! You're getting the idea, keep moving!")
+        elif distance < 3:
             mc.postToChat("Found it!")
             finalPos = mc.player.getTilePos()
             mc.setBlocks(finalPos.x - 5, finalPos.y + 10, finalPos.z - 5, finalPos.x + 5, finalPos.y + 10, finalPos.z + 5, 38)
-            #post to twitter
-        
+            time.sleep(5)
+            break
+
+    if time = 100:
+        mc.setBlocks(pos.x, pos.y, pos.z, 90)
+        mc.postToChat("You lose! Good day sir!")
 
 def spiderBlockLocations():
     from mcpi.minecraft import Minecraft
@@ -162,12 +169,21 @@ def pumpkinLocations():
 
 if __name__ == '__main__':
     Thread(target = treasureBlock).start()
-    Thread(target = progressBar).start()
     Thread(target = spiderBlockLocations).start()
     Thread(target = spiderBlockLocations).start()
     Thread(target = spiderBlockLocations).start()
     Thread(target = spiderBlockLocations).start()
     Thread(target = spiderBlockLocations).start()
+    Thread(target = lavaBlockLocations).start()
+    Thread(target = lavaBlockLocations).start()
+    Thread(target = lavaBlockLocations).start()
+    Thread(target = lavaBlockLocations).start()
+    Thread(target = lavaBlockLocations).start()
+    Thread(target = pumpkinLocations).start()
+    Thread(target = pumpkinLocations).start()
+    Thread(target = pumpkinLocations).start()
+    Thread(target = pumpkinLocations).start()
+    Thread(target = pumpkinLocations).start()
     
     
 
