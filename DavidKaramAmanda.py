@@ -41,6 +41,11 @@ def progressBar():
 
         time.sleep(10)
 
+    block = 51
+    mc.setBlocks(pos.x, pos.y, pos.z, block)
+    mc.postToChat("You lose! Good day sir!")
+    break
+
 def treasureBlock():
     from mcpi.minecraft import Minecraft
     import math
@@ -68,15 +73,18 @@ def treasureBlock():
 
     
         if distance > 100:
-            mc.postToChat("On Fire! You are losing time! Think outside the box!")
+            mc.postToChat("On Fire!")
+            mc.postToChat("Think differently!")
         elif distance > 50:
-            mc.postToChat("Boiling! You are losing time! Think outside the box!")
+            mc.postToChat("Boiling!")
+            mc.postToChat("Think differently!")
         elif distance > 25:
             mc.postToChat("Warm")
         elif distance > 12:
             mc.postToChat("cold")
         elif distance > 6:
-            mc.postToChat("Freezing! You're getting the idea, keep moving!")
+            mc.postToChat("Freezing!")
+            mc.postToChat("closer!")
         elif distance < 3:
             mc.postToChat("Found it!")
             finalPos = mc.player.getTilePos()
@@ -84,9 +92,6 @@ def treasureBlock():
             time.sleep(5)
             break
 
-    if time = 100:
-        mc.setBlocks(pos.x, pos.y, pos.z, 90)
-        mc.postToChat("You lose! Good day sir!")
 
 def spiderBlockLocations():
     from mcpi.minecraft import Minecraft
@@ -141,7 +146,7 @@ def lavaBlockLocations():
 
 
 
-def pumpkinLocations():
+def TNTLocations():
     from mcpi.minecraft import Minecraft
     import math
     import time
@@ -161,14 +166,16 @@ def pumpkinLocations():
     while True:
         pos = mc.player.getPos()
         distance = math.sqrt((pos.x - destX) ** 2 + (pos.z - destZ) ** 2)
-        block = 91
+        blockID = 46
+        BolockState = 1
         if distance < 3:
-            mc.setBlock(destX, destY, destZ, block)
+            mc.setBlock(destX, destY, destZ, blockID, BlockState)
             mc.postToChat("Whahahahahahahahahahaha")
 
 
 if __name__ == '__main__':
     Thread(target = treasureBlock).start()
+    Thread(target = progressBar).start()
     Thread(target = spiderBlockLocations).start()
     Thread(target = spiderBlockLocations).start()
     Thread(target = spiderBlockLocations).start()
@@ -179,11 +186,11 @@ if __name__ == '__main__':
     Thread(target = lavaBlockLocations).start()
     Thread(target = lavaBlockLocations).start()
     Thread(target = lavaBlockLocations).start()
-    Thread(target = pumpkinLocations).start()
-    Thread(target = pumpkinLocations).start()
-    Thread(target = pumpkinLocations).start()
-    Thread(target = pumpkinLocations).start()
-    Thread(target = pumpkinLocations).start()
+    Thread(target = TNTLocations).start()
+    Thread(target = TNTLocations).start()
+    Thread(target = TNTLocations).start()
+    Thread(target = TNTLocations).start()
+    Thread(target = TNTLocations).start()
     
     
 
