@@ -44,7 +44,7 @@ def progressBar():
     block = 51
     mc.setBlocks(pos.x, pos.y, pos.z, block)
     mc.postToChat("You lose! Good day sir!")
-    break
+    quit(treasureBlock)
 
 def treasureBlock():
     from mcpi.minecraft import Minecraft
@@ -90,6 +90,7 @@ def treasureBlock():
             finalPos = mc.player.getTilePos()
             mc.setBlocks(finalPos.x - 5, finalPos.y + 10, finalPos.z - 5, finalPos.x + 5, finalPos.y + 10, finalPos.z + 5, 38)
             time.sleep(5)
+            quit(progressBar)
             break
 
 
@@ -166,10 +167,11 @@ def TNTLocations():
     while True:
         pos = mc.player.getPos()
         distance = math.sqrt((pos.x - destX) ** 2 + (pos.z - destZ) ** 2)
-        blockID = 46
-        BolockState = 1
+        TNT = 46
+        state = 1
         if distance < 3:
-            mc.setBlock(destX, destY, destZ, blockID, BlockState)
+            mc.setBlock(destX, destY, destZ, 46)
+            mc.setBlocks(destX + 3, destY + 3, destZ + 3, destX - 3, destY - 3, destZ - 3, 0)
             mc.postToChat("Whahahahahahahahahahaha")
 
 
