@@ -10,6 +10,10 @@ destX = random.randint(-127, 127)
 destZ = random.randint(-127, 127)
 destY = mc.getHeight(destX, destZ)
 
+
+def beginning():
+    mc.postToChat("Welcome! Try to find the diamond before time runs out!")
+
 def progressBar():
     
     pos = mc.player.getTilePos()
@@ -87,7 +91,7 @@ def treasureBlock():
             mc.postToChat("closer!")
         elif distance < 3:
             mc.postToChat("Found it!")
-            finalPos = mc.player.getTilePos()
+            finalPos = mc.player.getPos()
             mc.setBlocks(finalPos.x - 5, finalPos.y + 10, finalPos.z - 5, finalPos.x + 5, finalPos.y + 10, finalPos.z + 5, 38)
             time.sleep(5)
             quit(progressBar)
@@ -147,7 +151,7 @@ def lavaBlockLocations():
 
 
 
-def TNTLocations():
+def holeLocations():
     from mcpi.minecraft import Minecraft
     import math
     import time
@@ -167,14 +171,15 @@ def TNTLocations():
     while True:
         pos = mc.player.getPos()
         distance = math.sqrt((pos.x - destX) ** 2 + (pos.z - destZ) ** 2)
-        TNT = 46
-        state = 1
+        air = 0
         if distance < 3:
-            mc.setBlock(destX, destY, destZ, 46)
-            mc.setBlocks(destX + 3, destY + 3, destZ + 3, destX - 3, destY - 3, destZ - 3, 0)
-            mc.postToChat("Whahahahahahahahahahaha")
+            mc.setBlock(destX, destY, destZ, 0)
+            mc.setBlock(destX, destY - 1, destZ, 0)
+            
 
 
+beginning()
+time.sleep(3)
 if __name__ == '__main__':
     Thread(target = treasureBlock).start()
     Thread(target = progressBar).start()
@@ -188,11 +193,11 @@ if __name__ == '__main__':
     Thread(target = lavaBlockLocations).start()
     Thread(target = lavaBlockLocations).start()
     Thread(target = lavaBlockLocations).start()
-    Thread(target = TNTLocations).start()
-    Thread(target = TNTLocations).start()
-    Thread(target = TNTLocations).start()
-    Thread(target = TNTLocations).start()
-    Thread(target = TNTLocations).start()
+    Thread(target = holeLocations).start()
+    Thread(target = holeLocations).start()
+    Thread(target = holeLocations).start()
+    Thread(target = holeLocations).start()
+    Thread(target = holeLocations).start()
     
     
 
