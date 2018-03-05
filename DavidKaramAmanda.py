@@ -174,7 +174,7 @@ def holeLocations():
         air = 0
         if distance < 3:
             mc.setBlock(destX, destY, destZ, 0)
-            mc.setBlock(destX, destY - 1, destZ, 0)
+            mc.setBlock(destX - 1, destY - 65, destZ - 1, 0)
             
 
 
