@@ -46,7 +46,7 @@ def progressBar():
         time.sleep(10)
 
     block = 51
-    mc.setBlocks(pos.x, pos.y, pos.z, block)
+    mc.setBlock(pos.x, pos.y, pos.z, block)
     mc.postToChat("You lose! Good day sir!")
     quit(treasureBlock)
 
@@ -122,7 +122,7 @@ def spiderBlockLocations():
         if distance < 3:
             mc.setBlock(destX, destY, destZ, block)
             mc.postToChat("Whahahahahahahahahahaha")
-            mc.setBlocks(pos.x, pos.y, pos.z, block)
+            mc.setBlock(pos.x, pos.y, pos.z, block)
 
 def lavaBlockLocations():
     from mcpi.minecraft import Minecraft
@@ -147,6 +147,7 @@ def lavaBlockLocations():
         block = 10
         if distance < 3:
             mc.setBlock(destX, destY, destZ, block)
+            mc.setBlocks(destX + 1, destY + 1, destZ + 1, destX - 1, destY - 1, destZ - 1, block)
             mc.postToChat("Whahahahahahahahahahaha")
 
 
@@ -174,7 +175,7 @@ def holeLocations():
         air = 0
         if distance < 3:
             mc.setBlock(destX, destY, destZ, 0)
-            mc.setBlock(destX - 1, destY - 65, destZ - 1, 0)
+            mc.setBlocks(destX + 1, destY + 50, destZ + 1, destX - 1, destY - 50, destZ - 3, 0)
             
 
 
