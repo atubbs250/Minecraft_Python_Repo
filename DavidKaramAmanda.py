@@ -47,7 +47,7 @@ def progressBar():
 
     block = 51
     mc.setBlock(pos.x, pos.y, pos.z, block)
-    mc.postToChat("You lose! Good day sir!")
+    mc.postToChat("Time ran out!")
     quit(treasureBlock)
 
 def treasureBlock():
@@ -93,7 +93,6 @@ def treasureBlock():
             mc.postToChat("Found it!")
             finalPos = mc.player.getPos()
             mc.setBlocks(finalPos.x - 5, finalPos.y + 10, finalPos.z - 5, finalPos.x + 5, finalPos.y + 10, finalPos.z + 5, 38)
-            time.sleep(5)
             quit(progressBar)
             break
 
@@ -119,7 +118,7 @@ def spiderBlockLocations():
         pos = mc.player.getPos()
         distance = math.sqrt((pos.x - destX) ** 2 + (pos.z - destZ) ** 2)
         block = 30
-        if distance < 3:
+        if distance < 2:
             mc.setBlock(destX, destY, destZ, block)
             mc.postToChat("Whahahahahahahahahahaha")
             mc.setBlock(pos.x, pos.y, pos.z, block)
