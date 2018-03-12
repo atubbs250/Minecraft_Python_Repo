@@ -1,3 +1,8 @@
+
+''' In this program, you will have to find a diamond within a certain
+amount of time. Fake diamonds will be places to throw off the player as well as
+opposite wording in order to find the winning diamond. '''
+
 from mcpi.minecraft import Minecraft
 import math
 import time
@@ -11,8 +16,17 @@ destZ = random.randint(-127, 127)
 destY = mc.getHeight(destX, destZ)
 
 
+'''lets the player know that the game is beginning and to find a diamond
+within a 100 sec time limit'''
+
 def beginning():
-    mc.postToChat("Welcome! Try to find the diamond before time runs out!")
+    mc.postToChat("Welcome! Try to find the diamond before 100 sec go by!")
+
+
+'''This is the code for the progress bar. It is a 100 sec timer and will tell
+the player that they lost and quit the program if time runs out. It displays
+time by changing glass blocks to blue blocks from the top to bottom every
+ten seconds'''
 
 def progressBar():
     
@@ -49,6 +63,13 @@ def progressBar():
     mc.setBlock(pos.x, pos.y, pos.z, block)
     mc.postToChat("Time ran out!")
     quit(treasureBlock)
+
+
+'''This code is for the winning diamond. In order to find it, the player will
+have to get colder instead of warmer, but they have to figure that out
+themselves. When the diamond is found within the aloted time they will be
+prompted to write their name in the shell. They will be posted to the
+projects twitter, saying that they won the game.'''
 
 def treasureBlock():
     from mcpi.minecraft import Minecraft
@@ -119,6 +140,11 @@ def treasureBlock():
             break
 
 
+''' This program will be used to trick the player by placing 5
+disguised diamond blocks in random locations, that if the player
+is within a three block radius they will be stuck in spider webs. They will
+also be caught in the air whenever they fly over them. '''
+
 def spiderBlockLocations():
     from mcpi.minecraft import Minecraft
     import math
@@ -143,6 +169,11 @@ def spiderBlockLocations():
             mc.setBlock(destX, destY, destZ, block)
             mc.postToChat("Whahahahahahahahahahaha")
             mc.setBlock(pos.x, pos.y, pos.z, block)
+
+
+'''This program places 5 fake diamonds in the world
+which turns into a hug pile of lava to get you stuck if you get close within
+a 3 block radius to them.'''
 
 def lavaBlockLocations():
     from mcpi.minecraft import Minecraft
@@ -170,6 +201,9 @@ def lavaBlockLocations():
             mc.postToChat("Whahahahahahahahahahaha")
 
 
+'''This program creates a hole that the player will fall into if they walk
+up to the diamond. This hole is very large and will require flight to get
+out. There will be 5 of these placed randomly.'''
 
 def holeLocations():
     from mcpi.minecraft import Minecraft
