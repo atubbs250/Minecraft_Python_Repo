@@ -108,9 +108,11 @@ def treasureBlock():
             mc.postToChat("closer!")
         elif distance < 3:
             mc.postToChat("Found it!")
+            mc.postToChat("Enter your name in the shell")
             finalPos = mc.player.getPos()
             mc.setBlocks(finalPos.x - 5, finalPos.y + 10, finalPos.z - 5, finalPos.x + 5, finalPos.y + 10, finalPos.z + 5, 38)
-            message = "Woo Hoo! I won David, Karam, and Amanda's python game!"
+            name = input("What is your name?: ")
+            message = "Woo Hoo! " + str(name) + " won David, Karam, and Amanda's python game!"
             twitter.update_status(status=message)
             print("Tweeted: %s" % message)
             quit(progressBar)
@@ -132,7 +134,6 @@ def spiderBlockLocations():
 
     block = 57
     mc.setBlock(destX, destY, destZ, block)
-    mc.postToChat("SBlock set")
 
     while True:
         pos = mc.player.getPos()
@@ -158,7 +159,6 @@ def lavaBlockLocations():
 
     block = 57
     mc.setBlock(destX, destY, destZ, block)
-    mc.postToChat("LBlock set")
 
     while True:
         pos = mc.player.getPos()
@@ -186,7 +186,6 @@ def holeLocations():
 
     block = 57
     mc.setBlock(destX, destY, destZ, block)
-    mc.postToChat("PBlock set")
 
     while True:
         pos = mc.player.getPos()
