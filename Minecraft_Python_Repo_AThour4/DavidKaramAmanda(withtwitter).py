@@ -69,7 +69,7 @@ def progressBar():
 have to get colder instead of warmer, but they have to figure that out
 themselves. When the diamond is found within the aloted time they will be
 prompted to write their name in the shell. They will be posted to the
-projects twitter, saying that they won the game.'''
+projects twitter (@PythonTreasureHunt), saying that they won the game.'''
 
 def treasureBlock():
     from mcpi.minecraft import Minecraft
