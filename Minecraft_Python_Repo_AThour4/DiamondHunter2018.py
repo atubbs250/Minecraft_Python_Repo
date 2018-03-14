@@ -1,7 +1,9 @@
 
 ''' In this program, you will have to find a diamond within a certain
 amount of time. Fake diamonds will be places to throw off the player as well as
-opposite wording in order to find the winning diamond. '''
+opposite wording in order to find the winning diamond.
+This project was created by David Eubank, Karam Qaoud, and Amanda Tubbs on
+03/14/18.'''
 
 from mcpi.minecraft import Minecraft
 import math
